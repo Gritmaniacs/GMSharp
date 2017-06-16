@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System.Collections.Generic;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace GMSharp
@@ -58,11 +59,11 @@ namespace GMSharp
 
         [XmlArray("instances")]
         [XmlArrayItem("instance", typeof(Instance))]
-        public Instance[] Instances { get; set; }
+        public List<Instance> Instances { get; set; }
 
         [XmlArray("tiles")]
         [XmlArrayItem("tile", typeof(Tile))]
-        public Tile[] Tiles { get; set; }
+        public List<Tile> Tiles { get; set; }
 
         [XmlElement("PhysicsWorld")]
         public int IsPhysicsWorld { get; set; }
@@ -87,5 +88,45 @@ namespace GMSharp
 
         [XmlElement("PhysicsWorldPixToMeters")]
         public double PhysicsWorldPixToMeters { get; set; }
+
+        public Room()
+        {
+            Caption = string.Empty;
+            Width = 1024;
+            Height = 768;
+            VerticalSnap = 32;
+            HorizontalSnap = 32;
+            IsIsometric = GMBool.False;
+            Speed = 30;
+            IsPersistent = GMBool.False;
+            Colour = 12632256;
+            ShowColour = GMBool.True;
+            Code = string.Empty;
+            EnableViews = GMBool.False;
+            ClearViewBackground = GMBool.True;
+            ClearDisplayBuffer = GMBool.True;
+
+            Backgrounds = new Background[8];
+            Views = new View[8];
+
+            for (int i = 0; i < 8; i++)
+            {
+                Backgrounds[i] = new Background();
+                Views[i] = new View();
+            }
+
+            Instances = new List<Instance>();
+            Tiles = new List<Tile>();
+
+
+            IsPhysicsWorld = GMBool.False;
+            PhysicsWorldTop = 0;
+            PhysicsWorldLeft = 0;
+            PhysicsWorldRight = 1024;
+            PhysicsWorldBottom = 768;
+            PhysicsWorldGravityX = 0;
+            PhysicsWorldGravityY = 10;
+            PhysicsWorldPixToMeters = 0.100000001490116;
+        }
     }
 }

@@ -37,5 +37,19 @@ namespace GMSharp
 
         [XmlAttribute("stretch")]
         public int Stretch { get; set; }
+
+        public Background()
+        {
+            IsVisible = GMBool.False;
+            IsVisible = GMBool.False;
+            Name = string.Empty;
+            X = 0;
+            Y = 0;
+            IsHorizontallyTiled = GMBool.True;
+            IsVerticallyTiled = GMBool.True;
+            HorizontalSpeed = 0;
+            VerticalSpeed = 0;
+            Stretch = GMBool.False;
+        }
     }
 }

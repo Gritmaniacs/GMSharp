@@ -49,5 +49,23 @@ namespace GMSharp
 
         [XmlAttribute("vspeed")]
         public int VerticalSpeed { get; set; }
+
+        public View()
+        {
+            IsVisible = GMBool.False;
+            ObjectName = string.Empty;
+            X = 0;
+            Y = 0;
+            Width = 1024;
+            Height = 768;
+            ViewportX = 0;
+            ViewportY = 0;
+            ViewportWidth = 1024;
+            ViewportHeight = 768;
+            HorizontalBorder = 32;
+            VerticalBorder = 32;
+            HorizontalSpeed = -1;
+            VerticalSpeed = -1;
+        }
     }
 }

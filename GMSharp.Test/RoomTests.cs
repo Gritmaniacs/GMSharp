@@ -9,6 +9,81 @@ namespace GMSharp.Test
     public class RoomTests
     {
         [TestMethod]
+        public void Ctor_ShouldCreateDefaultRoom()
+        {
+            var room = new Room();
+
+            Assert.AreEqual(string.Empty, room.Caption);
+            Assert.AreEqual(1024, room.Width);
+            Assert.AreEqual(768, room.Height);
+            Assert.AreEqual(32, room.VerticalSnap);
+            Assert.AreEqual(32, room.HorizontalSnap);
+            Assert.AreEqual(GMBool.False, room.IsIsometric);
+            Assert.AreEqual(30, room.Speed);
+            Assert.AreEqual(GMBool.False, room.IsPersistent);
+            Assert.AreEqual(12632256, room.Colour);
+            Assert.AreEqual(GMBool.True, room.ShowColour);
+            Assert.AreEqual(string.Empty, room.Code);
+            Assert.AreEqual(GMBool.False, room.EnableViews);
+            Assert.AreEqual(GMBool.True, room.ClearViewBackground);
+            Assert.AreEqual(GMBool.True, room.ClearDisplayBuffer);
+
+            Assert.AreEqual(8, room.Backgrounds.Length);
+
+            for (int i = 0; i < 8; i++)
+            {
+                var background = room.Backgrounds[i];
+
+                Assert.AreEqual(GMBool.False, background.IsVisible);
+                Assert.AreEqual(GMBool.False, background.IsForeground);
+                Assert.AreEqual(string.Empty, background.Name);
+                Assert.AreEqual(0, background.X);
+                Assert.AreEqual(0, background.Y);
+                Assert.AreEqual(GMBool.True, background.IsHorizontallyTiled);
+                Assert.AreEqual(GMBool.True, background.IsHorizontallyTiled);
+                Assert.AreEqual(0, background.HorizontalSpeed);
+                Assert.AreEqual(0, background.VerticalSpeed);
+                Assert.AreEqual(GMBool.False, background.Stretch);
+            }
+
+            Assert.AreEqual(8, room.Views.Length);
+
+            for (int i = 0; i < 8; i++)
+            {
+                var view = room.Views[i];
+
+                Assert.AreEqual(GMBool.False, view.IsVisible);
+                Assert.AreEqual(string.Empty, view.ObjectName);
+                Assert.AreEqual(0, view.X);
+                Assert.AreEqual(0, view.Y);
+                Assert.AreEqual(1024, view.Width);
+                Assert.AreEqual(768, view.Height);
+                Assert.AreEqual(0, view.ViewportX);
+                Assert.AreEqual(0, view.ViewportY);
+                Assert.AreEqual(1024, view.ViewportWidth);
+                Assert.AreEqual(768, view.ViewportHeight);
+                Assert.AreEqual(32, view.HorizontalBorder);
+                Assert.AreEqual(32, view.VerticalBorder);
+                Assert.AreEqual(-1, view.HorizontalSpeed);
+                Assert.AreEqual(-1, view.VerticalSpeed);
+            }
+
+            Assert.AreEqual(0, room.Instances.Count);
+
+            Assert.AreEqual(0, room.Tiles.Count);
+
+            Assert.AreEqual(GMBool.False, room.IsPhysicsWorld);
+            Assert.AreEqual(0, room.PhysicsWorldTop);
+            Assert.AreEqual(0, room.PhysicsWorldLeft);
+            Assert.AreEqual(1024, room.PhysicsWorldRight);
+            Assert.AreEqual(768, room.PhysicsWorldBottom);
+            Assert.AreEqual(0, room.PhysicsWorldGravityX);
+            Assert.AreEqual(10, room.PhysicsWorldGravityY);
+            Assert.AreEqual(0.100000001490116, room.PhysicsWorldPixToMeters);
+        }
+
+
+        [TestMethod]
         public void Ctor_ShouldDeserializeRoom()
         {
             using (var inputFile = File.OpenRead("TestRoom.room.gmx"))
@@ -84,7 +159,7 @@ namespace GMSharp.Test
                         var view = room.Views[i];
 
                         Assert.AreEqual(GMBool.False, view.IsVisible);
-                        Assert.AreEqual("<undefined>", room.Views[0].ObjectName);
+                        Assert.AreEqual("<undefined>", view.ObjectName);
                         Assert.AreEqual(0, view.X);
                         Assert.AreEqual(0, view.Y);
                         Assert.AreEqual(1024, view.Width);
@@ -99,7 +174,7 @@ namespace GMSharp.Test
                         Assert.AreEqual(-1, view.VerticalSpeed);
                     }
 
-                    Assert.AreEqual(12, room.Instances.Length);
+                    Assert.AreEqual(12, room.Instances.Count);
 
                     Assert.AreEqual("obj_checkpoint", room.Instances[0].ObjectName);
                     Assert.AreEqual(32, room.Instances[0].X);
@@ -112,7 +187,7 @@ namespace GMSharp.Test
                     Assert.AreEqual(4294967295, room.Instances[0].Colour);
                     Assert.AreEqual(0.0, room.Instances[0].Rotation);
 
-                    Assert.AreEqual(21, room.Tiles.Length);
+                    Assert.AreEqual(21, room.Tiles.Count);
 
                     Assert.AreEqual("bg_checkpoint", room.Tiles[0].BackgroundName);
                     Assert.AreEqual(8, room.Tiles[0].X);
