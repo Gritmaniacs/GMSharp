@@ -44,8 +44,30 @@ namespace GMSharp
 
         [XmlAttribute("scaleX")]
         public double XScale { get; set; }
-    
+
         [XmlAttribute("scaleY")]
         public double YScale { get; set; }
+
+        public Tile Clone()
+        {
+            var newTile = new Tile();
+
+            newTile.BackgroundName = BackgroundName;
+            newTile.X = X;
+            newTile.Y = Y;
+            newTile.Width = Width;
+            newTile.Height = Height;
+            newTile.XOrigin = XOrigin;
+            newTile.YOrigin = YOrigin;
+            newTile.Id = Id;
+            newTile.Name = Name;
+            newTile.Depth = Depth;
+            newTile.IsLocked = IsLocked;
+            newTile.Colour = Colour;
+            newTile.XScale = XScale;
+            newTile.YScale = YScale;
+
+            return newTile;
+        }
     }
 }

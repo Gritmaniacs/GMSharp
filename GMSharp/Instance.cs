@@ -34,5 +34,23 @@ namespace GMSharp
 
         [XmlAttribute("rotation")]
         public double Rotation { get; set; }
+
+        public Instance Clone()
+        {
+            var newInstance = new Instance();
+
+            newInstance.ObjectName = ObjectName;
+            newInstance.X = X;
+            newInstance.Y = Y;
+            newInstance.Name = Name;
+            newInstance.IsLocked = IsLocked;
+            newInstance.Code = Code;
+            newInstance.XScale = XScale;
+            newInstance.YScale = YScale;
+            newInstance.Colour = Colour;
+            newInstance.Rotation = Rotation;
+
+            return newInstance;
+        }
     }
 }
