@@ -9,7 +9,7 @@ namespace GMSharp
     public class View
     {
         [XmlAttribute("visible")]
-        public int IsVisible { get; set; }
+        public GMBool IsVisible { get; set; }
 
         [XmlAttribute("objName")]
         public string ObjectName { get; set; }
@@ -52,7 +52,7 @@ namespace GMSharp
 
         public View()
         {
-            IsVisible = GMBool.False;
+            IsVisible = false;
             ObjectName = string.Empty;
             X = 0;
             Y = 0;

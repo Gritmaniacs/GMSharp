@@ -23,31 +23,31 @@ namespace GMSharp
         public int HorizontalSnap { get; set; }
 
         [XmlElement("isometric")]
-        public int IsIsometric { get; set; }
+        public GMBool IsIsometric { get; set; }
 
         [XmlElement("speed")]
         public int Speed { get; set; }
 
         [XmlElement("persistent")]
-        public int IsPersistent { get; set; }
+        public GMBool IsPersistent { get; set; }
 
         [XmlElement("colour")]
         public int Colour { get; set; }
 
         [XmlElement("showcolour")]
-        public int ShowColour { get; set; }
+        public GMBool ShowColour { get; set; }
 
         [XmlElement("code")]
         public string Code { get; set; }
 
         [XmlElement("enableViews")]
-        public int EnableViews { get; set; }
+        public GMBool EnableViews { get; set; }
 
         [XmlElement("clearViewBackground")]
-        public int ClearViewBackground { get; set; }
+        public GMBool ClearViewBackground { get; set; }
 
         [XmlElement("clearDisplayBuffer")]
-        public int ClearDisplayBuffer { get; set; }
+        public GMBool ClearDisplayBuffer { get; set; }
 
         [XmlArray("backgrounds")]
         [XmlArrayItem("background", typeof(Background))]
@@ -66,7 +66,7 @@ namespace GMSharp
         public List<Tile> Tiles { get; set; }
 
         [XmlElement("PhysicsWorld")]
-        public int IsPhysicsWorld { get; set; }
+        public GMBool IsPhysicsWorld { get; set; }
 
         [XmlElement("PhysicsWorldTop")]
         public int PhysicsWorldTop { get; set; }
@@ -96,15 +96,15 @@ namespace GMSharp
             Height = 768;
             VerticalSnap = 32;
             HorizontalSnap = 32;
-            IsIsometric = GMBool.False;
+            IsIsometric = false;
             Speed = 30;
-            IsPersistent = GMBool.False;
+            IsPersistent = false;
             Colour = 12632256;
-            ShowColour = GMBool.True;
+            ShowColour = true;
             Code = string.Empty;
-            EnableViews = GMBool.False;
-            ClearViewBackground = GMBool.True;
-            ClearDisplayBuffer = GMBool.True;
+            EnableViews = false;
+            ClearViewBackground = true;
+            ClearDisplayBuffer = true;
 
             Backgrounds = new Background[8];
             Views = new View[8];
@@ -119,7 +119,7 @@ namespace GMSharp
             Tiles = new List<Tile>();
 
 
-            IsPhysicsWorld = GMBool.False;
+            IsPhysicsWorld = false;
             PhysicsWorldTop = 0;
             PhysicsWorldLeft = 0;
             PhysicsWorldRight = 1024;

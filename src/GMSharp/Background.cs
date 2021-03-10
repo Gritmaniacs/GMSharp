@@ -1,6 +1,4 @@
-﻿using System;
-using System.Xml;
-using System.Xml.Schema;
+﻿using System.Xml;
 using System.Xml.Serialization;
 
 namespace GMSharp
@@ -9,10 +7,10 @@ namespace GMSharp
     public class Background
     {
         [XmlAttribute("visible")]
-        public int IsVisible { get; set; }
+        public GMBool IsVisible { get; set; }
 
         [XmlAttribute("foreground")]
-        public int IsForeground { get; set; }
+        public GMBool IsForeground { get; set; }
 
         [XmlAttribute("name")]
         public string Name { get; set; }
@@ -24,10 +22,10 @@ namespace GMSharp
         public int Y { get; set; }
 
         [XmlAttribute("htiled")]
-        public int IsHorizontallyTiled { get; set; }
+        public GMBool IsHorizontallyTiled { get; set; }
 
         [XmlAttribute("vtiled")]
-        public int IsVerticallyTiled { get; set; }
+        public GMBool IsVerticallyTiled { get; set; }
 
         [XmlAttribute("hspeed")]
         public int HorizontalSpeed { get; set; }
@@ -36,20 +34,20 @@ namespace GMSharp
         public int VerticalSpeed { get; set; }
 
         [XmlAttribute("stretch")]
-        public int Stretch { get; set; }
+        public GMBool Stretch { get; set; }
 
         public Background()
         {
-            IsVisible = GMBool.False;
-            IsVisible = GMBool.False;
+            IsVisible = false;
+            IsVisible = false;
             Name = string.Empty;
             X = 0;
             Y = 0;
-            IsHorizontallyTiled = GMBool.True;
-            IsVerticallyTiled = GMBool.True;
+            IsHorizontallyTiled = false;
+            IsVerticallyTiled = true;
             HorizontalSpeed = 0;
             VerticalSpeed = 0;
-            Stretch = GMBool.False;
+            Stretch = false;
         }
     }
 }

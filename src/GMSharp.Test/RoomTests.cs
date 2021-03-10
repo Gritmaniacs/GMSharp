@@ -18,15 +18,15 @@ namespace GMSharp.Test
             Assert.AreEqual(768, room.Height);
             Assert.AreEqual(32, room.VerticalSnap);
             Assert.AreEqual(32, room.HorizontalSnap);
-            Assert.AreEqual(GMBool.False, room.IsIsometric);
+            Assert.AreEqual(false, room.IsIsometric);
             Assert.AreEqual(30, room.Speed);
-            Assert.AreEqual(GMBool.False, room.IsPersistent);
+            Assert.AreEqual(false, room.IsPersistent);
             Assert.AreEqual(12632256, room.Colour);
-            Assert.AreEqual(GMBool.True, room.ShowColour);
+            Assert.AreEqual(true, room.ShowColour);
             Assert.AreEqual(string.Empty, room.Code);
-            Assert.AreEqual(GMBool.False, room.EnableViews);
-            Assert.AreEqual(GMBool.True, room.ClearViewBackground);
-            Assert.AreEqual(GMBool.True, room.ClearDisplayBuffer);
+            Assert.AreEqual(false, room.EnableViews);
+            Assert.AreEqual(true, room.ClearViewBackground);
+            Assert.AreEqual(true, room.ClearDisplayBuffer);
 
             Assert.AreEqual(8, room.Backgrounds.Length);
 
@@ -34,16 +34,16 @@ namespace GMSharp.Test
             {
                 var background = room.Backgrounds[i];
 
-                Assert.AreEqual(GMBool.False, background.IsVisible);
-                Assert.AreEqual(GMBool.False, background.IsForeground);
+                Assert.AreEqual(false, background.IsVisible);
+                Assert.AreEqual(false, background.IsForeground);
                 Assert.AreEqual(string.Empty, background.Name);
                 Assert.AreEqual(0, background.X);
                 Assert.AreEqual(0, background.Y);
-                Assert.AreEqual(GMBool.True, background.IsHorizontallyTiled);
-                Assert.AreEqual(GMBool.True, background.IsHorizontallyTiled);
+                Assert.AreEqual(true, background.IsHorizontallyTiled);
+                Assert.AreEqual(true, background.IsHorizontallyTiled);
                 Assert.AreEqual(0, background.HorizontalSpeed);
                 Assert.AreEqual(0, background.VerticalSpeed);
-                Assert.AreEqual(GMBool.False, background.Stretch);
+                Assert.AreEqual(false, background.Stretch);
             }
 
             Assert.AreEqual(8, room.Views.Length);
@@ -52,7 +52,7 @@ namespace GMSharp.Test
             {
                 var view = room.Views[i];
 
-                Assert.AreEqual(GMBool.False, view.IsVisible);
+                Assert.AreEqual(false, view.IsVisible);
                 Assert.AreEqual(string.Empty, view.ObjectName);
                 Assert.AreEqual(0, view.X);
                 Assert.AreEqual(0, view.Y);
@@ -72,7 +72,7 @@ namespace GMSharp.Test
 
             Assert.AreEqual(0, room.Tiles.Count);
 
-            Assert.AreEqual(GMBool.False, room.IsPhysicsWorld);
+            Assert.AreEqual(false, room.IsPhysicsWorld);
             Assert.AreEqual(0, room.PhysicsWorldTop);
             Assert.AreEqual(0, room.PhysicsWorldLeft);
             Assert.AreEqual(1024, room.PhysicsWorldRight);
@@ -98,48 +98,48 @@ namespace GMSharp.Test
                     Assert.AreEqual(128, room.Height);
                     Assert.AreEqual(8, room.VerticalSnap);
                     Assert.AreEqual(8, room.HorizontalSnap);
-                    Assert.AreEqual(GMBool.False, room.IsIsometric);
+                    Assert.AreEqual(false, room.IsIsometric);
                     Assert.AreEqual(60, room.Speed);
-                    Assert.AreEqual(GMBool.False, room.IsPersistent);
+                    Assert.AreEqual(false, room.IsPersistent);
                     Assert.AreEqual(2302755, room.Colour);
-                    Assert.AreEqual(GMBool.True, room.ShowColour);
+                    Assert.AreEqual(true, room.ShowColour);
                     Assert.AreEqual("var x = 0;", room.Code);
-                    Assert.AreEqual(GMBool.True, room.EnableViews);
-                    Assert.AreEqual(GMBool.True, room.ClearViewBackground);
-                    Assert.AreEqual(GMBool.True, room.ClearDisplayBuffer);
+                    Assert.AreEqual(true, room.EnableViews);
+                    Assert.AreEqual(true, room.ClearViewBackground);
+                    Assert.AreEqual(true, room.ClearDisplayBuffer);
 
                     Assert.AreEqual(8, room.Backgrounds.Length);
 
-                    Assert.AreEqual(GMBool.True, room.Backgrounds[0].IsVisible);
-                    Assert.AreEqual(GMBool.False, room.Backgrounds[0].IsForeground);
+                    Assert.AreEqual(true, room.Backgrounds[0].IsVisible);
+                    Assert.AreEqual(false, room.Backgrounds[0].IsForeground);
                     Assert.AreEqual("bg_floortiles", room.Backgrounds[0].Name);
                     Assert.AreEqual(0, room.Backgrounds[0].X);
                     Assert.AreEqual(0, room.Backgrounds[0].Y);
-                    Assert.AreEqual(GMBool.True, room.Backgrounds[0].IsHorizontallyTiled);
-                    Assert.AreEqual(GMBool.True, room.Backgrounds[0].IsHorizontallyTiled);
+                    Assert.AreEqual(true, room.Backgrounds[0].IsHorizontallyTiled);
+                    Assert.AreEqual(true, room.Backgrounds[0].IsHorizontallyTiled);
                     Assert.AreEqual(0, room.Backgrounds[0].HorizontalSpeed);
                     Assert.AreEqual(0, room.Backgrounds[0].VerticalSpeed);
-                    Assert.AreEqual(GMBool.False, room.Backgrounds[0].Stretch);
+                    Assert.AreEqual(false, room.Backgrounds[0].Stretch);
 
                     for (int i = 1; i < 8; i++)
                     {
                         var background = room.Backgrounds[i];
 
-                        Assert.AreEqual(GMBool.False, background.IsVisible);
-                        Assert.AreEqual(GMBool.False, background.IsForeground);
+                        Assert.AreEqual(false, background.IsVisible);
+                        Assert.AreEqual(false, background.IsForeground);
                         Assert.AreEqual(string.Empty, background.Name);
                         Assert.AreEqual(0, background.X);
                         Assert.AreEqual(0, background.Y);
-                        Assert.AreEqual(GMBool.True, background.IsHorizontallyTiled);
-                        Assert.AreEqual(GMBool.True, background.IsHorizontallyTiled);
+                        Assert.AreEqual(true, background.IsHorizontallyTiled);
+                        Assert.AreEqual(true, background.IsHorizontallyTiled);
                         Assert.AreEqual(0, background.HorizontalSpeed);
                         Assert.AreEqual(0, background.VerticalSpeed);
-                        Assert.AreEqual(GMBool.False, background.Stretch);
+                        Assert.AreEqual(false, background.Stretch);
                     }
 
                     Assert.AreEqual(8, room.Views.Length);
 
-                    Assert.AreEqual(GMBool.True, room.Views[0].IsVisible);
+                    Assert.AreEqual(true, room.Views[0].IsVisible);
                     Assert.AreEqual("<undefined>", room.Views[0].ObjectName);
                     Assert.AreEqual(0, room.Views[0].X);
                     Assert.AreEqual(0, room.Views[0].Y);
@@ -158,7 +158,7 @@ namespace GMSharp.Test
                     {
                         var view = room.Views[i];
 
-                        Assert.AreEqual(GMBool.False, view.IsVisible);
+                        Assert.AreEqual(false, view.IsVisible);
                         Assert.AreEqual("<undefined>", view.ObjectName);
                         Assert.AreEqual(0, view.X);
                         Assert.AreEqual(0, view.Y);
@@ -180,7 +180,7 @@ namespace GMSharp.Test
                     Assert.AreEqual(32, room.Instances[0].X);
                     Assert.AreEqual(24, room.Instances[0].Y);
                     Assert.AreEqual("inst_D451F6B2", room.Instances[0].Name);
-                    Assert.AreEqual(GMBool.False, room.Instances[0].IsLocked);
+                    Assert.AreEqual(false, room.Instances[0].IsLocked);
                     Assert.AreEqual(string.Empty, room.Instances[0].Code);
                     Assert.AreEqual(1.0, room.Instances[0].XScale);
                     Assert.AreEqual(1.0, room.Instances[0].YScale);
@@ -199,13 +199,13 @@ namespace GMSharp.Test
                     Assert.AreEqual(10000351, room.Tiles[0].Id);
                     Assert.AreEqual("inst_A9169C12", room.Tiles[0].Name);
                     Assert.AreEqual(1000010, room.Tiles[0].Depth);
-                    Assert.AreEqual(GMBool.False, room.Tiles[0].IsLocked);
+                    Assert.AreEqual(false, room.Tiles[0].IsLocked);
                     Assert.AreEqual(4294967295, room.Tiles[0].Colour);
                     Assert.AreEqual(1.0, room.Tiles[0].XScale);
                     Assert.AreEqual(1.0, room.Tiles[0].YScale);
 
 
-                    Assert.AreEqual(GMBool.False, room.IsPhysicsWorld);
+                    Assert.AreEqual(false, room.IsPhysicsWorld);
                     Assert.AreEqual(0, room.PhysicsWorldTop);
                     Assert.AreEqual(0, room.PhysicsWorldLeft);
                     Assert.AreEqual(1024, room.PhysicsWorldRight);
