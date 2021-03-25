@@ -6,9 +6,9 @@ namespace GMSharp
     public class SpriteFrame
     {
         [XmlAttribute("index")]
-        public int Index { get; set; }
+        public int Index { get; set; } = 0;
 
         [XmlText]
-        public string Filename { get; set; }
+        public string Filename { get; set; } = string.Empty;
     }
 }

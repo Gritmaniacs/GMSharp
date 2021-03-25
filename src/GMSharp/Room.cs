@@ -23,35 +23,35 @@ namespace GMSharp
         public int HorizontalSnap { get; set; }
 
         [XmlElement("isometric")]
-        public GMBool IsIsometric { get; set; }
+        public int IsIsometric { get; set; }
 
         [XmlElement("speed")]
         public int Speed { get; set; }
 
         [XmlElement("persistent")]
-        public GMBool IsPersistent { get; set; }
+        public int IsPersistent { get; set; }
 
         [XmlElement("colour")]
         public int Colour { get; set; }
 
         [XmlElement("showcolour")]
-        public GMBool ShowColour { get; set; }
+        public int ShowColour { get; set; }
 
         [XmlElement("code")]
         public string Code { get; set; }
 
         [XmlElement("enableViews")]
-        public GMBool EnableViews { get; set; }
+        public int EnableViews { get; set; }
 
         [XmlElement("clearViewBackground")]
-        public GMBool ClearViewBackground { get; set; }
+        public int ClearViewBackground { get; set; }
 
         [XmlElement("clearDisplayBuffer")]
-        public GMBool ClearDisplayBuffer { get; set; }
+        public int ClearDisplayBuffer { get; set; }
 
         [XmlArray("backgrounds")]
-        [XmlArrayItem("background", typeof(Background))]
-        public Background[] Backgrounds { get; set; }
+        [XmlArrayItem("background", typeof(RoomBackground))]
+        public RoomBackground[] Backgrounds { get; set; }
 
         [XmlArray("views")]
         [XmlArrayItem("view", typeof(View))]
@@ -66,7 +66,7 @@ namespace GMSharp
         public List<Tile> Tiles { get; set; }
 
         [XmlElement("PhysicsWorld")]
-        public GMBool IsPhysicsWorld { get; set; }
+        public int IsPhysicsWorld { get; set; }
 
         [XmlElement("PhysicsWorldTop")]
         public int PhysicsWorldTop { get; set; }
@@ -96,22 +96,22 @@ namespace GMSharp
             Height = 768;
             VerticalSnap = 32;
             HorizontalSnap = 32;
-            IsIsometric = false;
+            IsIsometric = GMBool.False;
             Speed = 30;
-            IsPersistent = false;
+            IsPersistent = GMBool.False;
             Colour = 12632256;
-            ShowColour = true;
+            ShowColour = GMBool.True;
             Code = string.Empty;
-            EnableViews = false;
-            ClearViewBackground = true;
-            ClearDisplayBuffer = true;
+            EnableViews = GMBool.False;
+            ClearViewBackground = GMBool.True;
+            ClearDisplayBuffer = GMBool.True;
 
-            Backgrounds = new Background[8];
+            Backgrounds = new RoomBackground[8];
             Views = new View[8];
 
             for (int i = 0; i < 8; i++)
             {
-                Backgrounds[i] = new Background();
+                Backgrounds[i] = new RoomBackground();
                 Views[i] = new View();
             }
 
@@ -119,7 +119,7 @@ namespace GMSharp
             Tiles = new List<Tile>();
 
 
-            IsPhysicsWorld = false;
+            IsPhysicsWorld = GMBool.False;
             PhysicsWorldTop = 0;
             PhysicsWorldLeft = 0;
             PhysicsWorldRight = 1024;

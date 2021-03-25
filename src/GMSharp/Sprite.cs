@@ -6,56 +6,58 @@ namespace GMSharp
     public class Sprite
     {
         [XmlElement("type")]
-        public int Type { get; set; }
+        public SpriteType Type { get; set; } = 0;
 
         [XmlElement("xorig")]
-        public int OriginX { get; set; }
+        public int OriginX { get; set; } = 0;
 
         [XmlElement("yorigin")]
-        public int OriginY { get; set; }
+        public int OriginY { get; set; } = 0;
 
-        // TODO
-        // public int colkind { get; set; }
+        [XmlElement("colkind")]
+        public CollisionMaskShape CollisionMaskShape { get; set; } = CollisionMaskShape.Rectangle;
 
-        // TODO
-        // public int coltolerance { get; set; }
+        [XmlElement("coltolerance")]
+        public int CollisionMaskAlphaTolerance { get; set; } = 0;
 
-        // TODO
-        // public int sepmasks { get; set; }
+        [XmlElement("sepmasks")]
+        public int HasSeparateCollisionMask { get; set; } = GMBool.False;
 
-        // TODO 
-        // public int bboxmode { get; set; }
+        [XmlElement("bboxmode")]
+        public BoundingBoxMode BoundingBoxMode { get; set; } = BoundingBoxMode.Automatic;
 
         [XmlElement("bbox_left")]
-        public int BoundingBoxLeft { get; set; }
+        public int BoundingBoxLeft { get; set; } = 0;
 
         [XmlElement("bbox_right")]
-        public int BoundingBoxRight { get; set; }
+        public int BoundingBoxRight { get; set; } = 0;
 
         [XmlElement("bbox_top")]
-        public int BoundingBoxTop { get; set; }
+        public int BoundingBoxTop { get; set; } = 0;
 
         [XmlElement("bbox_bottom")]
-        public int BoundingBoxBottom { get; set; }
+        public int BoundingBoxBottom { get; set; } = 0;
 
-        public GMBool HTile { get; set; }
+        [XmlElement("HTile")]
+        public int IsHorizontallyTiled { get; set; } = GMBool.False;
 
-        public GMBool VTile { get; set; }
+        [XmlElement("VTile")]
+        public int IsVerticallyTiled { get; set; } = GMBool.False;
 
         // TODO:
         // public ?[] TextureGoups
 
         [XmlElement("For3D")]
-        public GMBool IsFor3D { get; set; }
+        public int IsFor3D { get; set; } = GMBool.False;
 
         [XmlElement("width")]
-        public int Width { get; set; }
+        public int Width { get; set; } = 0;
 
         [XmlElement("height")]
-        public int Height { get; set; }
+        public int Height { get; set; } = 0;
 
         [XmlArray("frames")]
         [XmlArrayItem("frame", typeof(SpriteFrame))]
-        public SpriteFrame[] Frames { get; set; }
+        public SpriteFrame[] Frames { get; set; } = null;
     }
 }

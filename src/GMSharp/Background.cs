@@ -1,53 +1,50 @@
-﻿using System.Xml;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace GMSharp
 {
     [XmlType("background")]
     public class Background
     {
-        [XmlAttribute("visible")]
-        public GMBool IsVisible { get; set; }
+        [XmlElement("istileset")]
+        public int IsTileset { get; set; } = GMBool.False;
 
-        [XmlAttribute("foreground")]
-        public GMBool IsForeground { get; set; }
+        [XmlElement("tilewidth")]
+        public int TileWidth { get; set; } = 0;
 
-        [XmlAttribute("name")]
-        public string Name { get; set; }
+        [XmlElement("tileheight")]
+        public int TileHeight { get; set; } = 0;
 
-        [XmlAttribute("x")]
-        public int X { get; set; }
+        [XmlElement("tilexoff")]
+        public int TileXOffset { get; set; } = 0;
 
-        [XmlAttribute("y")]
-        public int Y { get; set; }
+        [XmlElement("tileyoff")]
+        public int TileYOffset { get; set; } = 0;
 
-        [XmlAttribute("htiled")]
-        public GMBool IsHorizontallyTiled { get; set; }
+        [XmlElement("tilehsep")]
+        public int TileHorizontalSeparation { get; set; } = 0;
 
-        [XmlAttribute("vtiled")]
-        public GMBool IsVerticallyTiled { get; set; }
+        [XmlElement("tilevsep")]
+        public int TileVerticalSeparation { get; set; } = 0;
 
-        [XmlAttribute("hspeed")]
-        public int HorizontalSpeed { get; set; }
+        [XmlElement("HTile")]
+        public int IsHorizontallyTiled { get; set; } = GMBool.False;
 
-        [XmlAttribute("vspeed")]
-        public int VerticalSpeed { get; set; }
+        [XmlElement("VTile")]
+        public int IsVerticallyTiled { get; set; } = GMBool.False;
 
-        [XmlAttribute("stretch")]
-        public GMBool Stretch { get; set; }
+        // TODO:
+        // public ?[] TextureGoups
 
-        public Background()
-        {
-            IsVisible = false;
-            IsVisible = false;
-            Name = string.Empty;
-            X = 0;
-            Y = 0;
-            IsHorizontallyTiled = false;
-            IsVerticallyTiled = true;
-            HorizontalSpeed = 0;
-            VerticalSpeed = 0;
-            Stretch = false;
-        }
+        [XmlElement("For3D")]
+        public int IsFor3D { get; set; } = GMBool.False;
+
+        [XmlElement("width")]
+        public int Width { get; set; } = 0;
+
+        [XmlElement("height")]
+        public int Height { get; set; } = 0;
+
+        [XmlElement("data")]
+        public string BitmapFile { get; set; } = string.Empty;
     }
 }
